@@ -1,0 +1,13 @@
+name: wave-merge
+on:
+  push:
+    branches: ["journey-7e4bdd50aa/wave-merge"]
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+jobs:
+  verify:
+    uses: drivestream-lab/mandate-verify/.github/workflows/verify.yml@main
+    with:
+      commit: ${{ github.sha }}
