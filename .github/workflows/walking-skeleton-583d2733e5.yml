@@ -1,0 +1,13 @@
+name: walking-skeleton-583d2733e5
+on:
+  push:
+    branches: ["journey-583d2733e5/walking-skeleton-583d2733e5"]
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+jobs:
+  verify:
+    uses: drivestream-lab/mandate-verify/.github/workflows/verify.yml@main
+    with:
+      commit: ${{ github.sha }}
